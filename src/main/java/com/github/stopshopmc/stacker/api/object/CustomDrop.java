@@ -2,8 +2,9 @@ package com.github.stopshopmc.stacker.api.object;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
+
+import com.github.sirblobman.api.utility.Validate;
 
 public class CustomDrop {
     private final int minExperience, maxExperience;
@@ -15,7 +16,7 @@ public class CustomDrop {
         this.maxExperience = maxExperience;
         this.removeOtherDrops = removeOtherDrops;
         
-        this.dropList = new ArrayList<>(Objects.requireNonNull(dropList, "dropList must not be null!"));
+        this.dropList = new ArrayList<>(Validate.notNull(dropList, "dropList must not be null!"));
     }
     
     public boolean shouldRemoveOtherDrops() {

@@ -1,11 +1,11 @@
 package com.github.stopshopmc.stacker.api.event;
 
-import java.util.Objects;
-
 import org.bukkit.entity.Entity;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+
+import com.github.sirblobman.api.utility.Validate;
 
 public class EntityMergeEvent extends Event implements Cancellable {
     private static final HandlerList handlerList = new HandlerList();
@@ -22,8 +22,8 @@ public class EntityMergeEvent extends Event implements Cancellable {
     private final Entity entity2;
     private boolean isCancelled;
     public EntityMergeEvent(Entity entity1, Entity entity2) {
-        this.entity1 = Objects.requireNonNull(entity1, "entity1 must not be null!");
-        this.entity2 = Objects.requireNonNull(entity2, "entity2 must not be null!");
+        this.entity1 = Validate.notNull(entity1, "entity1 must not be null!");
+        this.entity2 = Validate.notNull(entity2, "entity2 must not be null!");
         this.isCancelled = false;
     }
 

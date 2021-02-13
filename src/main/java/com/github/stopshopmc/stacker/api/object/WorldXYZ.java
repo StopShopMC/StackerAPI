@@ -24,6 +24,7 @@ public final class WorldXYZ {
 
     public WorldXYZ(Location location) {
         Validate.notNull(location, "location must not be null!");
+
         World world = location.getWorld();
         if(world == null) throw new IllegalArgumentException("location must have a valid world!");
         this.worldId = world.getUID();

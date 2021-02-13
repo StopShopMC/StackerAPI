@@ -1,10 +1,10 @@
 package com.github.stopshopmc.stacker.api.event;
 
-import java.util.Objects;
-
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+
+import com.github.sirblobman.api.utility.Validate;
 
 public class StackDeathEvent extends Event {
     private static final HandlerList handlerList = new HandlerList();
@@ -21,7 +21,7 @@ public class StackDeathEvent extends Event {
     private final long stackSize;
     private boolean killEntireStack;
     public StackDeathEvent(LivingEntity entity, long stackSize) {
-        this.entity = Objects.requireNonNull(entity, "entity must not be null!");
+        this.entity = Validate.notNull(entity, "entity must not be null!");
         this.stackSize = stackSize;
         this.killEntireStack = (stackSize <= 1);
     }
