@@ -1,14 +1,19 @@
 package com.github.stopshopmc.stacker.api.manager;
 
-import org.bukkit.block.Block;
+import org.bukkit.block.CreatureSpawner;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
-public interface ISpawnerStackManager {
-    long getStackSize(Block block);
-    void setStackSize(Block block, long stackSize);
+import com.github.stopshopmc.stacker.api.object.WorldXYZ;
 
-    ItemStack createItemStack(String entityId);
+public interface ISpawnerStackManager extends IStackManager<CreatureSpawner, WorldXYZ> {
+    void loadSpawners();
+    void saveSpawners();
+    void removeAllHolograms();
+
+    EntityType getEntityType(CreatureSpawner spawner);
+
+    ItemStack createItemStack(EntityType entityType, int amount, int stackSize);
     EntityType getEntityType(ItemStack item);
-    EntityType getEntityType(Block block);
+    int getStackSize(ItemStack item);
 }

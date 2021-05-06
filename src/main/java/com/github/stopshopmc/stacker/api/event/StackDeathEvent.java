@@ -18,9 +18,9 @@ public class StackDeathEvent extends Event {
     }
     
     private final LivingEntity entity;
-    private final long stackSize;
+    private final int stackSize;
     private boolean killEntireStack;
-    public StackDeathEvent(LivingEntity entity, long stackSize) {
+    public StackDeathEvent(LivingEntity entity, int stackSize) {
         this.entity = Validate.notNull(entity, "entity must not be null!");
         this.stackSize = stackSize;
         this.killEntireStack = (stackSize <= 1);
@@ -30,7 +30,7 @@ public class StackDeathEvent extends Event {
         return this.entity;
     }
     
-    public long getStackSize() {
+    public int getStackSize() {
         return this.stackSize;
     }
     

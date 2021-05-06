@@ -1,21 +1,22 @@
 package com.github.stopshopmc.stacker.api.manager;
 
-import java.util.UUID;
+public interface IStackManager<K, V> {
+    V map(K k);
 
-import org.bukkit.entity.Entity;
+    boolean isStacked(K k);
+    int getMaxStackSize();
 
-public interface IStackManager<E extends Entity> {
-    boolean isStacked(E entity);
-    long getStackSize(E entity);
-    long getStackSize(UUID uuid);
-    void setStackSize(E entity, long stackSize);
-    long getMaxStackSize();
+    int getStackSize(K k);
+    void setStackSize(K k, int stackSize);
 
-    void removeStack(E entity);
-    void removeStackAndEntity(E entity);
+    void unstack(K k);
+    void remove(K k);
     void removeAll();
 
-    E merge(E entity1, E entity2);
-    void updateName(E entity);
-    boolean shouldNotStack(E entity1, E entity2);
+    K merge(K k1, K k2);
+    void updateName(K k);
+    boolean shouldNotStack(K k1, K k2);
+
+    void setStackable(K k, boolean stackable);
+    boolean isUnstackable(K k);
 }

@@ -1,6 +1,8 @@
 package com.github.stopshopmc.stacker.api.plugin;
 
+import org.bukkit.World;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import com.github.sirblobman.api.configuration.ConfigurationManager;
 import com.github.sirblobman.api.configuration.PlayerDataManager;
@@ -15,6 +17,8 @@ import com.github.stopshopmc.stacker.api.manager.ISpawnReasonManager;
 import com.github.stopshopmc.stacker.api.manager.ISpawnerStackManager;
 
 public interface IStackerPlugin {
+    JavaPlugin getPlugin();
+
     void onLoad();
     void onEnable();
     void onDisable();
@@ -36,4 +40,6 @@ public interface IStackerPlugin {
     IItemStackManager getItemStackManager();
     IMobStackManager getMobStackManager();
     ISpawnerStackManager getSpawnerStackManager();
+
+    boolean isDisabled(World world);
 }

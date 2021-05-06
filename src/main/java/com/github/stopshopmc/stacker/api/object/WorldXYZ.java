@@ -89,4 +89,13 @@ public final class WorldXYZ {
         int x = getX(), y = getY(), z = getZ();
         return world.getBlockAt(x, y, z);
     }
+
+    @Nullable
+    public Location getLocation() {
+        World world = getWorld();
+        if(world == null) return null;
+
+        int x = getX(), y = getY(), z = getZ();
+        return new Location(world, x, y, z, 0.0F, 0.0F);
+    }
 }
