@@ -42,4 +42,5 @@ public interface IStackerPlugin {
     ISpawnerStackManager getSpawnerStackManager();
 
     boolean isDisabled(World world);
+    void printDebug(Class<?> clazz, String message);
 }
