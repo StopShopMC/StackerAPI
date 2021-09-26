@@ -1,8 +1,9 @@
 # Stacker API Usage
 
-
 ### Maven Module
+
 Stacker API is a maven jar. You can use it in your project.
+
 ```xml
 <repositories>
     <!-- SirBlobman Public Repository -->
@@ -24,7 +25,9 @@ Stacker API is a maven jar. You can use it in your project.
 ```
 
 ### API Usage Example
+
 This example shows you how to get the stack size of a mob.
+
 ```java
 public int getStackSize(LivingEntity entity) {
     PluginManager pluginManager = Bukkit.getPluginManager();

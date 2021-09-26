@@ -18,29 +18,42 @@ import com.github.stopshopmc.stacker.api.manager.ISpawnerStackManager;
 
 public interface IStackerPlugin {
     JavaPlugin getPlugin();
-
+    
     void onLoad();
+    
     void onEnable();
+    
     void onDisable();
-
+    
     YamlConfiguration getConfig();
+    
     void saveDefaultConfig();
+    
     void reloadConfig();
+    
     void saveConfig();
-
+    
     ConfigurationManager getConfigurationManager();
+    
     MultiVersionHandler getMultiVersionHandler();
+    
     PlayerDataManager getPlayerDataManager();
+    
     LanguageManager getLanguageManager();
-
+    
     ISpawnReasonManager getSpawnReasonManager();
+    
     ICustomDropManager getCustomDropManager();
+    
     INerfManager getNerfManager();
-
+    
     IItemStackManager getItemStackManager();
+    
     IMobStackManager getMobStackManager();
+    
     ISpawnerStackManager getSpawnerStackManager();
-
+    
     boolean isDisabled(World world);
+    
     void printDebug(Class<?> clazz, String message);
 }

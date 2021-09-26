@@ -9,15 +9,6 @@ import com.github.sirblobman.api.utility.Validate;
 
 public class EntityMergeEvent extends Event implements Cancellable {
     private static final HandlerList handlerList = new HandlerList();
-    public static HandlerList getHandlerList() {
-        return handlerList;
-    }
-
-    @Override
-    public HandlerList getHandlers() {
-        return getHandlerList();
-    }
-
     private final Entity entity1;
     private final Entity entity2;
     private boolean isCancelled;
@@ -27,20 +18,29 @@ public class EntityMergeEvent extends Event implements Cancellable {
         this.isCancelled = false;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlerList;
+    }
+    
+    @Override
+    public HandlerList getHandlers() {
+        return getHandlerList();
+    }
+    
     @Override
     public boolean isCancelled() {
         return this.isCancelled;
     }
-
+    
     @Override
     public void setCancelled(boolean cancel) {
         this.isCancelled = cancel;
     }
-
+    
     public Entity getFirstEntity() {
         return this.entity1;
     }
-
+    
     public Entity getSecondEntity() {
         return this.entity2;
     }
