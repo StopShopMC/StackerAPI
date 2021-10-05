@@ -20,40 +20,27 @@ public interface IStackerPlugin {
     JavaPlugin getPlugin();
     
     void onLoad();
-    
     void onEnable();
-    
     void onDisable();
     
     YamlConfiguration getConfig();
-    
     void saveDefaultConfig();
-    
     void reloadConfig();
-    
     void saveConfig();
     
     ConfigurationManager getConfigurationManager();
-    
     MultiVersionHandler getMultiVersionHandler();
-    
     PlayerDataManager getPlayerDataManager();
-    
     LanguageManager getLanguageManager();
     
-    ISpawnReasonManager getSpawnReasonManager();
-    
-    ICustomDropManager getCustomDropManager();
-    
-    INerfManager getNerfManager();
-    
+    ISpawnerStackManager getSpawnerStackManager();
     IItemStackManager getItemStackManager();
-    
     IMobStackManager getMobStackManager();
     
-    ISpawnerStackManager getSpawnerStackManager();
+    ISpawnReasonManager getSpawnReasonManager();
+    ICustomDropManager getCustomDropManager();
+    INerfManager getNerfManager();
     
     boolean isDisabled(World world);
-    
     void printDebug(Class<?> clazz, String message);
 }

@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.github.sirblobman.api.utility.Validate;
 
-public class CustomDrop {
+public final class CustomDrop {
     private final boolean keepOriginalDrops;
     private final List<CustomDropItem> dropList;
     

@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 import com.github.sirblobman.api.utility.Validate;
 
-public class CustomDropItem {
+public final class CustomDropItem {
     private final ItemStack item;
     private boolean looting;
     private int chance, maxChance;
