@@ -13,18 +13,17 @@ public final class StackDeathEvent extends Event {
         HANDLER_LIST = new HandlerList();
     }
     
-    public static HandlerList getHandlerList() {
-        return HANDLER_LIST;
-    }
-    
     private final LivingEntity entity;
     private final int stackSize;
     private boolean killEntireStack;
-    
     public StackDeathEvent(LivingEntity entity, int stackSize) {
         this.entity = Validate.notNull(entity, "entity must not be null!");
         this.stackSize = stackSize;
         this.killEntireStack = (stackSize <= 1);
+    }
+    
+    public static HandlerList getHandlerList() {
+        return HANDLER_LIST;
     }
     
     @Override
